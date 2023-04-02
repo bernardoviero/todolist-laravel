@@ -1,0 +1,18 @@
+--- Planejamento do projeto:
+
+Entidades:
+-Usuário -> pode criar várias tarefas;
+-Usuário pode ter várias categorias;
+-Tarefas -> 1 tarefa sempre está relacionada há um ÚNICO usuário;
+-Categorias -> 1 tarefa sempre irá pertencer há uma categoria. E uma categoria pode ter várias tarefas;
+-Categorias -> uma categoria sempre vai pertencer há um usuário;
+
+Detalhamento:
+-Usuário: Padrão do laravel; (users)
+
+-Tarefa: id, titulo, categoria_id, usuario_id, data, descricao; (tasks)
+
+-Categoria: id, nome, prioridade(cor), usuario_id; (categories)
+
+
+
