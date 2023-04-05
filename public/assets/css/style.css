@@ -49,6 +49,8 @@ nav {
     padding: 20px 30px;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
+    border: 0;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -206,4 +208,45 @@ h2 {
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+}
+
+#create_task_section {
+    margin: auto;
+    padding-top: 20px;
+}
+
+#create_task_section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inputArea {
+    display: block;
+    margin: 10px 0 10px 0;
+}
+
+.inputArea label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputArea input,
+select {
+    height: 40px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+
+.inputArea textarea {
+    height: 120px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+
 }
