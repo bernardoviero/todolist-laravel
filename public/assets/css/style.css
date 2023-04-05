@@ -210,12 +210,12 @@ h2 {
     margin-top: 50px;
 }
 
-#create_task_section {
+#task_section {
     margin: auto;
     padding-top: 20px;
 }
 
-#create_task_section h1 {
+#task_section h1 {
     text-align: center;
     margin-bottom: 20px;
 }

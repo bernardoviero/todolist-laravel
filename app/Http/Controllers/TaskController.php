@@ -23,11 +23,30 @@ class TaskController extends Controller
 
     public function edit(Request $request)
     {
-        return view('task.edit');
+        $id = $request->id;
+
+        $task = Task::find($id);
+        if (!$task) {
+            return redirect(route('home'));
+        }
+
+        $categories = Category::all();
+        $data['categories'] = $categories;
+
+        $data['task'] = $task;
+        return view('task.edit', $data);
     }
 
     public function delete(Request $request)
     {
+        $id = $request->id;
+        $task = Task::find($id);
+        $taskDelete = (['deleted' => 1]);
+
+        if ($task) {
+            $task->update($taskDelete);
+        }
+        return redirect(route('home'));
     }
 
     public function create_action(Request $request)
@@ -41,6 +60,20 @@ class TaskController extends Controller
         $task->description = $request->input('description');
         $task->due_date = $request->input('due_date');
         $task->user_id = $user;
+        $task->save();
+
+        return redirect(route('home'));
+    }
+
+    public function edit_action(Request $request)
+    {
+        $request_data = $request->only(['title', 'due_date', 'category_id', 'description']);
+        $task = Task::find($request->id);
+
+        if (!$task) {
+            return redirect(route('home'));
+        }
+        $task->update($request_data);
         $task->save();
 
         return redirect(route('home'));

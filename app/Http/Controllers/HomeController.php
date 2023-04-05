@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        $tasks = Task::all()->take(3);
+        $tasks = Task::all()->where('deleted', '=', 0)->take(3);
         return view('home', ['tasks' => $tasks]);
     }
 }

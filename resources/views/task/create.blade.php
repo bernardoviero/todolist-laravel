@@ -4,7 +4,7 @@
             Voltar
         </a>
     </x-slot:btn>
-    <section id="create_task_section">
+    <section id="task_section">
         <h1>Criar tarefa</h1>
         <form method="POST" action="{{ route('task.create_action') }}">
             @csrf
