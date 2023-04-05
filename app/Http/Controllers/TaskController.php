@@ -41,10 +41,10 @@ class TaskController extends Controller
     {
         $id = $request->id;
         $task = Task::find($id);
-        $taskDelete = (['deleted' => 1]);
 
         if ($task) {
-            $task->update($taskDelete);
+            $task->deleted = 1;
+            $task->save();
         }
         return redirect(route('home'));
     }
