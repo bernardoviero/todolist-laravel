@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -52,7 +53,7 @@ class TaskController extends Controller
     public function create_action(Request $request)
     {
         // Get the currently authenticated user
-        $user = 1;
+        $user = Auth::user()->id;
 
         $task = new Task();
         $task->title = $request->input('title');
